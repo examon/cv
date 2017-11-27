@@ -1,105 +1,237 @@
-\documentclass{res}
+%-------------------------
+% Resume in Latex
+% Author : Tomas Meszaros
+% License : MIT
+%------------------------
 
-\usepackage[hidelinks]{hyperref}
+\documentclass[letterpaper,11pt]{article}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{pifont}
-\newsectionwidth{0pt}
+\usepackage[english,ngerman]{babel}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex,hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\renewcommand{\headrulewidth}{0pt}
-\setlength{\headheight}{24pt}
-\setlength{\headsep}{24pt}
+
+
 \pagestyle{fancy}
-\cfoot{}
-\topmargin=-1.2in
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    {#2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemIndent}[1]{
+  \item\small{
+    {#1 \vspace{+4pt}}
+  }
+}
+
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheadingOneline}[2]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+  \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
-	\thispagestyle{empty} % no header
-	\centerline{\bf \Large{Tomáš Mészaroš}}
-	\centerline{\href{mailto:exo@tty.sk}{exo@tty.sk}}
-	\centerline{\href{https://github.com/examon}{github.com/examon}}
 
-	\begin{resume}
+%----------HEADING-----------------
+\newcommand\textbox[1]{%
+  \parbox{.333\textwidth}{#1}%
+}
+\noindent\textbox{\href{mailto:exo@tty.sk}{exo@tty.sk}\hfill}\textbox{\hfil\textbf{\huge Tomáš Mészaroš}\hfil}\textbox{\hfill\href{https://github.com/examon}{github.com/examon}}\\
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  +421 902 113313 & \href{https://www.linkedin.com/in/tomas-meszaros}{linkedin.com/in/tomas-meszaros}\\
+\end{tabular*}
 
-		\section{\centerline{PROFESSIONAL EXPERIENCE}}
+%\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%  \textbf{\Large Tomáš Mészaroš} & \href{https://github.com/examon}{github.com/examon}\\
+%  \href{mailto:exo@tty.sk}{exo@tty.sk} &  \href{https://www.linkedin.com/in/tomas-meszaros}{linkedin.com/in/tomas-meszaros}\\
+%\end{tabular*}
 
-		{\bf Internship} \hfill \emph{June 2015 - September 2015} \\
-			libvirt, Google Summer of Code 2015
+%-----------EXPERIENCE-----------------
+\smallskip
+\smallskip
+\section{EMPLOYMENT}
+  \resumeSubHeadingListStart
 
-			\begin{itemize} \itemsep -2pt
-				\item Designed and implemented new API for libvirt (virDomainRename) which provides clean virtual \\machine domain rename service.
-				\item Code: \emph{\href{https://libvirt.org/git/?p=libvirt.git;a=search;h=HEAD;s=Tomas+Meszaros;st=author}{https://libvirt.org/git/?p=libvirt.git;a=search;h=HEAD;s=Tomas+Meszaros;st=author}}\\
-				\emph{(C)}
-			\end{itemize}
+    \resumeSubheading
+      {Red Hat}{Brno, CR}
+      {Associate Software Engineer}{September 2017 -- Present}
+      \resumeItemListStart
+        \resumeItem{}
+          {Working on the framework and tooling able to containerize, migrate and upgrade applications. (Python, Bash)}
+      \resumeItemListEnd
 
+    \resumeSubheading
+      {Libvirt, Google Summer of Code}{Remote}
+      {Student Software Engineer}{Summer 2015}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           Designed and implemented new API for Libvirt virtualization library, which provides clean virtual machine domain rename service.\\
+           \emph{\href{https://libvirt.org/git/?p=libvirt.git;a=search;h=HEAD;s=Tomas+Meszaros;st=author}{libvirt.org/git/?p=libvirt.git;a=search;h=HEAD;s=Tomas+Meszaros;st=author}} (C)
+          }
+      \resumeItemListEnd
 
-		{\bf Internship} \hfill \emph{June 2015 - September 2015} \\
-			European Space Agency, OpenGEODE, Summer of Code in Space 2015
+    \resumeSubheading
+      {OpenGEODE, European Space Agency, SOCIS}{Remote}
+      {Student Software Engineer}{Summer 2015}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           Ported OpenGEODE to the Python3 and PyQt5.\\
+           \emph{\href{https://github.com/examon/opengeode}{github.com/examon/opengeode}} (Python)
+          }
+      \resumeItemListEnd
 
-			\begin{itemize} \itemsep -2pt
-				\item Ported OpenGEODE to the Python3/PyQt5.
-				\item Code: \emph{\href{https://github.com/examon/opengeode}{https://github.com/examon/opengeode}}\\
-				\emph{(Python, PyQt5)}
+    \resumeSubheading
+      {Red Hat}{Brno, CR}
+      {Intern}{March 2014 -- December 2014}
+      \resumeItemListStart
+        \resumeItem{}
+         {Worked as a member of the big data storage quality engineering team. (GlusterFS, Hadoop)}\\
+        \resumeItem{}
+         {Developed automated tests and tools that identified bugs and bottlenecks. (Python, Bash)}\\
+        \resumeItem{}
+         {Measured performance, reported bugs, communicated with upstream developers.}\\
+      \resumeItemListEnd
 
-			\end{itemize}
+    \resumeSubheading
+      {SunPy, European Space Agency, SOCIS}{Remote}
+      {Student Software Engineer}{September 2013 -- January 2014}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           Designed and developed the HyperMap data type prototype for the SunPy library.\\
+           \emph{\href{https://github.com/examon/sunpy/tree/hypermap}{github.com/examon/sunpy/tree/hypermap}} (Python)
+          }
+      \resumeItemListEnd
 
-		{\bf Internship} \hfill \emph{March 2014 - December 2014} \\
-			Red Hat Czech, Brno
+    \resumeSubheading
+      {Libvirt, Google Summer of Code}{Remote}
+      {Student Software Engineer}{Summer 2013}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           Implemented more intelligent auto-completion for the virsh command line tool.\\
+           \emph{\href{https://github.com/examon/libvirt}{github.com/examon/libvirt}} (C)
+          }
+      \resumeItemListEnd
 
-			\begin{itemize} \itemsep -2pt
-				\item Worked on the big data storage quality engineering team (GlusterFS, Hadoop, etc.).
-				\item Developed automated tests and tools that identified bugs and bottlenecks.
-				\item Measured performance, reported bugs, communicated with upstream developers.\\
-				\emph{(Python, Bash)}
-			\end{itemize}
+  \resumeSubHeadingListEnd
 
-		{\bf Internship} \hfill \emph{September 2013 - January 2014} \\
-			European Space Agency, SunPy, Summer of Code in Space 2013
+%-----------EDUCATION-----------------
+\smallskip
+\section{EDUCATION}
+  \resumeSubHeadingListStart
 
-			\begin{itemize} \itemsep -2pt
-				\item Designed and developed the HyperMap data type prototype for the SunPy library.
-				\item Code: \emph{\href{https://github.com/examon/sunpy/tree/hypermap}{https://github.com/examon/sunpy/tree/hypermap}}\\
-				\emph{(Python)}
-			\end{itemize}
+    \resumeSubheading
+      {Masaryk University - Faculty of Informatics}{Brno, CR}
+      {Master of Science, Computer Science}{2013 -- expected 2018}
+      \resumeItemListStart
+        \resumeItem{}
+        {The Open Source Contest 2013 winner (bug fixing competition).\\
+         \emph{\href{https://github.com/examon/osc\_2013\_solution}{github.com/examon/osc\_2013\_solution}} (Python, Bash)}
+      \resumeItemListEnd
 
-		{\bf Internship} \hfill \emph{June 2013 - September 2013} \\
-			libvirt, Google Summer of Code 2013
+    \resumeSubheading
+      {Slovak University of Technology - Faculty of Materials Science}{Trnava, SR}
+      {Bachelor of Science, Applied Informatics and Automation}{2010 -- 2013}
+      \resumeItemListStart
+        \resumeItem{}
+        {GPA in the top 10\%.}
+      \resumeItemListEnd
 
-			\begin{itemize} \itemsep -2pt
-				\item Implemented more intelligent auto-completion for the virsh command line tool.
-				\item Code: \emph{\href{https://github.com/examon/libvirt}{https://github.com/examon/libvirt}}\\
-				\emph{(C)}
-			\end{itemize}
+  \resumeSubHeadingListEnd
 
+%-----------PROJECTS-----------------
+\smallskip
+\section{PROJECTS}
+  \resumeSubHeadingListStart
+    \resumeSubheadingOneline
+      {Fedora Gooey Karma}{2013}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           An open-source GUI tool for the \emph{\href{https://bodhi.fedoraproject.org}{bodhi.fedoraproject.org}} application
+           Providing feedback about installed Fedora Test Update packages.
+           \emph{\href{https://pagure.io/fedora-qa/fedora-gooey-karma}{pagure.io/fedora-qa/fedora-gooey-karma}}\\
+          }
+        \resumeItem{}
+          {
+           After my initial development, project has been improved by students as a part of the Google Summer of Code and the Red Hat Research initiative.
+           \emph{\href{https://research.redhat.com/beta/projects/fedora-gooey-karma/}{research.redhat.com/beta/projects/fedora-gooey-karma}}\\
+           \emph{\href{https://github.com/examon/fedora-gooey-karma}{github.com/examon/fedora-gooey-karma}} (Python, PySide, rpm)
+          }
+      \resumeItemListEnd
 
-		\section{\centerline{PROJECTS}}
-		\vspace{6pt}
+    \resumeSubheadingOneline
+      {splitwm}{2012}
+      \resumeItemListStart
+        \resumeItem{}
+          {
+           An open-source window manager for the X11 able to emulate dual screen setup on the one physical screen.\\
+           \emph{\href{https://github.com/examon/splitwm}{github.com/examon/splitwm}} (C, Python, Bash, Xlib)
+          }
+      \resumeItemListEnd
 
-		{\bf splitwm} \emph{\href{https://github.com/examon/splitwm}{https://github.com/examon/splitwm}} \hfill \emph{December 2012 – March 2013} \\
-				An open-source window manager for the X11 able to emulate dual screen setup on the one physical screen.\\
-				\emph{(C, Python, Bash, Xlib)}
+  \resumeSubHeadingListEnd
 
-		{\bf Fedora Gooey Karma} \emph{\href{https://github.com/examon/fedora-gooey-karma}{https://github.com/examon/fedora-gooey-karma}} \hfill \emph{February 2013 – June 2013} \\
-			An open-source GUI tool for providing feedback about installed Test Update packages.\\
-			\emph{(Python, rpm, Fedora, PySide)}
-
-		\section{\centerline{EDUCATION}}
-
-		{\bf Masaryk University} \hfill \emph{2013 - Present} \\
-			Faculty of Informatics, Computer Science
-
-			\begin{itemize} \itemsep -2pt
-				\item The Open Source Contest 2013 winner (bug fixing competition).\\
-				Code: \emph{\href{https://github.com/examon/osc\_2013\_solution}{https://github.com/examon/osc\_2013\_solution}}\\
-				\emph{(Python, Bash)}
-			\end{itemize}
-
-		{\bf Slovak University of Technology} \hfill \emph{2010 - 2013} \\
-			Faculty of Materials Science, Bachelor of Science in Applied Informatics and Automation
-			\begin{itemize} \itemsep -2pt
-				\item GPA in the top 10\%.
-			\end{itemize}
-
-	\end{resume}
+%-------------------------------------------
 \end{document}
